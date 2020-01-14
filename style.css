@@ -50,9 +50,17 @@ header{
 	padding-left: 1.1em;
 }
 
-.disabled{
+.userInput.disabled{
 	opacity: 0.3;
 	pointer-events:none;
+
+	margin-top: 1em;
+	padding-top: 3.5em;
+
+	background-image: url(img/load.svg);
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: 3em;
 }
 
 footer{
