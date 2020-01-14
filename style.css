@@ -63,6 +63,26 @@ header{
 	background-size: 3em;
 }
 
+.refresh{
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding:4em;
+}
+
+button.btn-refresh{
+	background-image: url(img/refresh64.png);
+	background-repeat: no-repeat;
+	background-color: white;
+	background-position: center center;
+	cursor:pointer;
+	border:none;
+	width:64px;
+	height:64px;
+}
+
 footer{
 	background-color: yellow;
 	position: absolute;
