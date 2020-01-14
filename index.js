@@ -3,6 +3,11 @@ formElement.addEventListener("submit",function(event){
 	event.preventDefault();
 	var valueElement = document.querySelector(".userInput input[name=inputValue]");
 	var value = valueElement.value;
+
+	if(!value){
+		value = 1;
+	}
+
 	var rate = 1.11;
 	var result = value * rate;
 

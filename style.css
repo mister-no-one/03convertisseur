@@ -43,6 +43,13 @@ header{
 	display: block;
 }
 
+.result .toValue{
+	background-image: url(img/arrow2.png);
+	background-size: 1em;
+	background-repeat: no-repeat;
+	padding-left: 1.1em;
+}
+
 footer{
 	background-color: yellow;
 	position: absolute;
