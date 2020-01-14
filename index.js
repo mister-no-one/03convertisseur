@@ -1,5 +1,4 @@
 	var rate = 1.11;
-	console.log(rate);
 
 	function updateRate(){
 		var request = new XMLHttpRequest();
@@ -14,19 +13,34 @@
 	}
 
 	function processConvert(){
+		// RECUPERATION VALEURS
+		var valueElement = document.querySelector(".userInput input[name=inputValue]");
+		var value = valueElement.value;
 
+		if(!value){
+			value = 1;
+		}
+
+		// CALCUL
+		var result = value * rate;
+
+		// AFFICHAGE
+		var fromValueElement = document.querySelector(".result .fromValue");
+		var toValueElement = document.querySelector(".result .toValue");
+		fromValueElement.innerHTML = value + '€';
+		toValueElement.innerHTML = result + '$';
 	}
-
-
 
 	updateRate();
 	var element = document.querySelector(".userInput");
 	element.classList.remove("disabled");
 
 
-
-
-
+	var formElement = document.querySelector(".userInput form");
+	formElement.addEventListener("submit",function(event){
+		event.preventDefault();
+		processConvert();
+	})
 
 
 
@@ -50,21 +64,21 @@
 // });
 
 
-var formElement = document.querySelector(".userInput form");
-formElement.addEventListener("submit",function(event){
-	event.preventDefault();
-	var valueElement = document.querySelector(".userInput input[name=inputValue]");
-	var value = valueElement.value;
+// var formElement = document.querySelector(".userInput form");
+// formElement.addEventListener("submit",function(event){
+// 	event.preventDefault();
+// 	var valueElement = document.querySelector(".userInput input[name=inputValue]");
+// 	var value = valueElement.value;
 
-	if(!value){
-		value = 1;
-	}
+// 	if(!value){
+// 		value = 1;
+// 	}
 
-	var result = value * rate;
+// 	var result = value * rate;
 
-	var fromValueElement = document.querySelector(".result .fromValue");
-	var toValueElement = document.querySelector(".result .toValue");
+// 	var fromValueElement = document.querySelector(".result .fromValue");
+// 	var toValueElement = document.querySelector(".result .toValue");
 
-	fromValueElement.innerHTML = value + '€';
-	toValueElement.innerHTML = result + '$';
-})
+// 	fromValueElement.innerHTML = value + '€';
+// 	toValueElement.innerHTML = result + '$';
+// })
