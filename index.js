@@ -1,44 +1,70 @@
 	var rate = 1.11;
+	console.log(rate);
 
-	console.log("DEBUT");
+	function updateRate(){
+		var request = new XMLHttpRequest();
+		request.open("GET","https://api.exchangeratesapi.io/latest");
+		request.send();
 
-	var request = new XMLHttpRequest();
-	request.open("GET","https://api.exchangeratesapi.io/latest");
-	request.send();
+		request.addEventListener("load",function(event){
+			var dataText = event.target.responseText;
+			var data = JSON.parse(dataText);
+			rate = data.rates.USD;
+		});
+	}
 
-	request.addEventListener("load",function(event){
-		console.log("LOAD !");
-		var dataText = event.target.responseText;
-		var data = JSON.parse(dataText);
-		console.log(dataText);
-		console.log(data.rates.USD);
+	function processConvert(){
 
-		rate = data.rates.USD;
-
-		var element = document.querySelector(".userInput");
-		element.classList.remove("disabled");
-	});
-
-	console.log("APRES LE SEND");
-
-	var formElement = document.querySelector(".userInput form");
-	formElement.addEventListener("submit",function(event){
-		event.preventDefault();
-		var valueElement = document.querySelector(".userInput input[name=inputValue]");
-		var value = valueElement.value;
-
-		if(!value){
-			value = 1;
-		}
+	}
 
 
-		var result = value * rate;
 
-		var fromValueElement = document.querySelector(".result .fromValue");
-		var toValueElement = document.querySelector(".result .toValue");
+	updateRate();
+	var element = document.querySelector(".userInput");
+	element.classList.remove("disabled");
 
-		fromValueElement.innerHTML = value + '€';
-		toValueElement.innerHTML = result + '$';
-	})
 
-	console.log("FIN");
+
+
+
+
+
+
+
+
+// var rate = 1.11;
+
+// var request = new XMLHttpRequest();
+// request.open("GET","https://api.exchangeratesapi.io/latest");
+// request.send();
+
+// request.addEventListener("load",function(event){
+
+// 	var dataText = event.target.responseText;
+// 	var data = JSON.parse(dataText);
+
+// 	rate = data.rates.USD;
+
+// 	var element = document.querySelector(".userInput");
+// 	element.classList.remove("disabled");
+// });
+
+
+var formElement = document.querySelector(".userInput form");
+formElement.addEventListener("submit",function(event){
+	event.preventDefault();
+	var valueElement = document.querySelector(".userInput input[name=inputValue]");
+	var value = valueElement.value;
+
+	if(!value){
+		value = 1;
+	}
+
+	var result = value * rate;
+
+	var fromValueElement = document.querySelector(".result .fromValue");
+	var toValueElement = document.querySelector(".result .toValue");
+
+	fromValueElement.innerHTML = value + '€';
+	toValueElement.innerHTML = result + '$';
+})
