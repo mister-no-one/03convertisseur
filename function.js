@@ -47,3 +47,14 @@
 		rate = rates[currentCurrency];
 		processConvert();
 	}
+
+	function selectCurrency(targetElement){
+		var previousCurrency = document.querySelector(".selected");
+		if(previousCurrency){
+			previousCurrency.classList.remove("selected");
+		}
+		console.log(currentCurrency);
+
+		targetElement.classList.add("selected");
+		
+	}
