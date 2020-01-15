@@ -10,31 +10,20 @@
 	var btnPHP = document.querySelector(".currency-php");
 
 	btnYEN.addEventListener("click",function(event){
-		currencyJPY = event.target.getAttribute("data-currency");
-		symbolJPY = event.target.getAttribute("data-symbol");
-		currentCurrency = currencyJPY;
-		symbol = symbolJPY;
-		rate = rates[currentCurrency];
-		processConvert();
+		changeCurrency();
 	})
 
 	btnUSD.addEventListener("click",function(event){
-		currencyUSD = event.target.getAttribute("data-currency");
-		symbolUSD = event.target.getAttribute("data-symbol");
-		currentCurrency = currencyUSD;
-		symbol = symbolUSD;
-		rate = rates[currentCurrency];
-		processConvert();
+		changeCurrency();
 	})
 
 	btnPHP.addEventListener("click",function(event){
-		currencyPHP = event.target.getAttribute("data-currency");
-		symbolPHP = event.target.getAttribute("data-symbol");
-		currentCurrency = currencyPHP;
-		symbol = symbolPHP;
-		rate = rates[currentCurrency];
-		processConvert();
+		changeCurrency();
 	})
+
+	// // SELECTED CURRENCY
+	// var selectedCurrency = document.querySelector("currency");
+	// selectedCurrency.
 
 	// UPDATE RATE
 	updateRate();
@@ -51,3 +40,4 @@
 	// REFRESH RATE ON CLIC
 	var buttonRefresh = document.querySelector(".btn-refresh");
 	buttonRefresh.addEventListener("click",updateRate);
+

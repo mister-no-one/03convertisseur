@@ -11,7 +11,7 @@
 			console.log(rate);
 			rates = data.rates;
 
-			
+
 			console.log("Rate updated");
 		});
 		request.send();
@@ -37,4 +37,13 @@
 		toValueElement.innerHTML = result + symbol;
 
 		console.log(symbol);
+	}
+
+	function changeCurrency(){
+		currencyAll = event.target.getAttribute("data-currency");
+		symbolAll = event.target.getAttribute("data-symbol");
+		currentCurrency = currencyAll;
+		symbol = symbolAll;
+		rate = rates[currentCurrency];
+		processConvert();
 	}
