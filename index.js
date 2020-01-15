@@ -5,25 +5,38 @@
 
 	updateRate();
 
+	function selectCurrency(targetElement){
+		var previousCurrency = document.querySelector(".selected");
+		if(previousCurrency){
+			previousCurrency.classList.remove("selected");
+		}
+		console.log(currentCurrency);
+
+		targetElement.classList.add("selected");
+		
+	}
+
 	var btnYEN = document.querySelector(".currency-jpy");
 	var btnUSD = document.querySelector(".currency-usd");
 	var btnPHP = document.querySelector(".currency-php");
 
 	btnYEN.addEventListener("click",function(event){
-		changeCurrency();
+		changeCurrency(event.target);
+		selectCurrency(event.target);
 	})
 
 	btnUSD.addEventListener("click",function(event){
-		changeCurrency();
+		changeCurrency(event.target);
+		selectCurrency(event.target);
 	})
 
 	btnPHP.addEventListener("click",function(event){
-		changeCurrency();
+		changeCurrency(event.target);
+		selectCurrency(event.target);
 	})
 
-	// // SELECTED CURRENCY
-	// var selectedCurrency = document.querySelector("currency");
-	// selectedCurrency.
+	// SELECTED CURRENCY
+
 
 	// UPDATE RATE
 	updateRate();

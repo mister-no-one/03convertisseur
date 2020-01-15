@@ -39,9 +39,9 @@
 		console.log(symbol);
 	}
 
-	function changeCurrency(){
-		currencyAll = event.target.getAttribute("data-currency");
-		symbolAll = event.target.getAttribute("data-symbol");
+	function changeCurrency(targetElement){
+		currencyAll = targetElement.getAttribute("data-currency");
+		symbolAll = targetElement.getAttribute("data-symbol");
 		currentCurrency = currencyAll;
 		symbol = symbolAll;
 		rate = rates[currentCurrency];

@@ -83,23 +83,27 @@ button.btn-refresh{
 	height:64px;
 }
 
-.currencies{
-	display: inline-flex;
-	text-align: center;
-	margin: 3em;
+.currencies {
+	margin: 2em;
 }
 
-.currency{
-	background-color: white;
-	color: black;
+.currencies .currency {
+	display: inline;
 	padding: 0.5em;
-	margin-right: .3em;
-	list-style: none;
+	background-color: #ccc;
+
+	cursor: pointer;
+	transition: all 0.2s;
+	border-radius: 5px;
+	position: relative;
+	top:0;
 }
 
-.selected{
+.currencies .currency.selected {
 	background-color: black;
 	color: white;
+	border-radius: 5px;
+	top: -0.5em;
 }
 
 
