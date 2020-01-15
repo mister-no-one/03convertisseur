@@ -8,9 +8,10 @@
 			var dataText = event.target.responseText;
 			var data = JSON.parse(dataText);
 			rate = data.rates[currentCurrency];
+			console.log(rate);
 			rates = data.rates;
 
-
+			
 			console.log("Rate updated");
 		});
 		request.send();

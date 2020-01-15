@@ -1,15 +1,19 @@
 	var rate = 1.11;
 	var currentCurrency = "USD";
 	var symbol = '$';
+	var rates = {};
 
+	updateRate();
 
-	// var btnUSD = document.querySelector(".currency-usd");
-	// btnUSD.addEventListener("click",function(event){
-	// 	rate = event.target.getAttribute("data-currency");
-	// 	symbol = event.target.getAttribute("data-symbol");
-	// 	updateRate();
-	// 	console.log();
-	// })
+	var btnYEN = document.querySelector(".currency-jpy");
+	btnYEN.addEventListener("click",function(event){
+		currencyJPY = event.target.getAttribute("data-currency");
+		symbolJPY = event.target.getAttribute("data-symbol");
+		currentCurrency = currencyJPY;
+		symbol = symbolJPY;
+		rate = rates[currentCurrency];
+		processConvert();
+	})
 
 	// UPDATE RATE
 	updateRate();
