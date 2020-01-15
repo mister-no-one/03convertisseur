@@ -1,7 +1,7 @@
 	var rate = 1.11;
 
 	function updateRate(){
-		console.log("Debut requete")
+		console.log("Start to update the rate")
 		var request = new XMLHttpRequest();
 		request.open("GET","https://api.exchangeratesapi.io/latest");
 		request.send();
@@ -11,12 +11,13 @@
 			var data = JSON.parse(dataText);
 			rate = data.rates.USD;
 
-			console.log(rate);
+			console.log("Rate updated");
 		});
+		request.send();
 	}
 
 	function processConvert(){
-		
+		console.log("Convertion processing");
 		// RECUPERATION VALEURS
 		var valueElement = document.querySelector(".userInput input[name=inputValue]");
 		var value = valueElement.value;
