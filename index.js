@@ -1,4 +1,15 @@
 	var rate = 1.11;
+	var currentCurrency = "USD";
+	var symbol = '$';
+
+
+	// var btnUSD = document.querySelector(".currency-usd");
+	// btnUSD.addEventListener("click",function(event){
+	// 	rate = event.target.getAttribute("data-currency");
+	// 	symbol = event.target.getAttribute("data-symbol");
+	// 	updateRate();
+	// 	console.log();
+	// })
 
 	// UPDATE RATE
 	updateRate();

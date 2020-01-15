@@ -1,13 +1,15 @@
 	function updateRate(){
+		processConvert();
 		console.log("Start to update the rate")
 		var request = new XMLHttpRequest();
 		request.open("GET","https://api.exchangeratesapi.io/latest");
 		
-
 		request.addEventListener("load",function(event){
 			var dataText = event.target.responseText;
 			var data = JSON.parse(dataText);
-			rate = data.rates.USD;
+			rate = data.rates[currentCurrency];
+			rates = data.rates;
+
 
 			console.log("Rate updated");
 		});
@@ -31,5 +33,7 @@
 		var fromValueElement = document.querySelector(".result .fromValue");
 		var toValueElement = document.querySelector(".result .toValue");
 		fromValueElement.innerHTML = value + '€';
-		toValueElement.innerHTML = result + '$';
+		toValueElement.innerHTML = result + symbol;
+
+		console.log(symbol);
 	}
